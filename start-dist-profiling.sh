@@ -21,7 +21,7 @@ $run_task
 
 
 mkdir $target_dir
-./multitool.sh -s "rsync -avz ~/tmp-dist-profiling/$1/*stat $MASTER:/$target_dir/`hostname`/"
+./multitool.sh -s "rsync -avz ~/tmp-dist-profiling/$1-*/*stat $MASTER:/$target_dir/"
 ./multitool.sh -s 'rm -rf ~/tmp-dist-profiling'
 
 for i in $target_dir/*

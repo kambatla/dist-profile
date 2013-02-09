@@ -1,4 +1,4 @@
-dir=$1
+dir=$1-`hostname`
 
 mkdir -p $dir
 vmstat 10 > $dir/vmstat &

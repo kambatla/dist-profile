@@ -31,6 +31,7 @@ sh start-dist-profiling.sh wordcount-$1 '/home/kasha/h/hadoop-2.0.0-mr1-cdh4.2.0
 sh start-dist-profiling.sh wordcount-compress-$1 '/home/kasha/h/hadoop-2.0.0-mr1-cdh4.2.0/bin/hadoop jar /home/kasha/h/hadoop-2.0.0-mr1-cdh4.2.0/hadoop-examples-2.0.0-mr1-cdh4.2.0.jar wordcount -Dmapred.map.tasks=480 -Dmapred.reduce.tasks=240 -Dmapred.compress.map.output=true -Dmapred.map.output.compression.codec=org.apache.hadoop.io.compress.SnappyCodec terasort-out wc-compress-out'
 
 /home/kasha/h/hadoop-2.0.0-cdh4.2.0/bin/hadoop fs -rmr wc-compress-out
+/home/kasha/h/hadoop-2.0.0-cdh4.2.0/bin/hadoop fs -rmr terasort-out
 
 # 7. Shuffle
 sh start-dist-profiling.sh shuffle-$1 '/home/kasha/h/hadoop-2.0.0-mr1-cdh4.2.0/bin/hadoop jar /home/kasha/jars/macrobenchmarks-1.0-SNAPSHOT-jar-with-dependencies.jar com.cloudera.mb.ShuffleText -Dmapred.map.tasks=480 -Dmapred.reduce.tasks=240 24000000000 shuffle-out'

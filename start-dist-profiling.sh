@@ -4,6 +4,7 @@
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: sh start-dist-profiling.sh <run_name> <run_task>"
+    exit
 fi
 
 run_name=$1

@@ -1,4 +1,4 @@
-dir=$1
+dir=$1-`hostname`
 killall -9 vmstat
 killall -9 ifstat
 date +'%s' > $dir/stop-date

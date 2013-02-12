@@ -5,8 +5,6 @@ if [ "$#" -ne 1 ]; then
     exit 0
 fi
 
-sudo init.sh
-
 # 1. Teragen
 sh start-dist-profiling.sh teragen-$1 '/home/kasha/h/hadoop-2.0.0-mr1-cdh4.2.0/bin/hadoop jar /home/kasha/h/hadoop-2.0.0-mr1-cdh4.2.0/hadoop-examples-2.0.0-mr1-cdh4.2.0.jar teragen -Dmapred.map.tasks=480 -Dmapred.reduce.tasks=240 2400000000 teragen-out'
 

@@ -14,11 +14,11 @@ target_dir=$curr_dir/$1-stats
 
 mkdir ~/tmp-dist-profiling 
 cp -r *-profiling.sh ~/tmp-dist-profiling/
-
 ./multitool.sh -s "rsync -avz $MASTER:~/tmp-dist-profiling/ ~/tmp-dist-profiling"
+./multitool.sh -s "cd ~/tmp-dist-profiling; sudo sh init.sh"
 ./multitool.sh -s "cd ~/tmp-dist-profiling; sh start-profiling.sh $1"
 $run_task
-./multitool.sh -s "cd ~/tmp-dist-profiling/; sh stop-profiling.sh"
+./multitool.sh -s "cd ~/tmp-dist-profiling/; sh stop-profiling.sh $1"
 
 
 mkdir $target_dir
